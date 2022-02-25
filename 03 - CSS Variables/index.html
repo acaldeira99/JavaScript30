@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 
     <label for="blur">Blur:</label>
     <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
-
+ 
     <label for="base">Base Color</label>
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
@@ -23,7 +23,7 @@
   <style>
     :root {
       --base: #ffc600;
-      --spacing: 10px;
+      --spacing:50px;
       --blur: 10px;
     }
 
@@ -33,7 +33,7 @@
       filter: blur(var(--blur));
     }
 
-    .hl {
+    .hl{ 
       color: var(--base);
     }
 
@@ -60,17 +60,16 @@
   </style>
 
   <script>
-    const inputs = document.querySelectorAll('.controls input');
+     const inputs = document.querySelectorAll('.controls input')
 
-    function handleUpdate() {
-      const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
-    }
+     function handleUpdate(){
+       const suffix = this.dataset.sizing || ''
+       document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix)
+     }
 
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+     inputs.forEach(input => input.addEventListener('change',handleUpdate))
+     inputs.forEach(input => input.addEventListener('mousemove',handleUpdate))
   </script>
-
 
 </body>
 </html>
